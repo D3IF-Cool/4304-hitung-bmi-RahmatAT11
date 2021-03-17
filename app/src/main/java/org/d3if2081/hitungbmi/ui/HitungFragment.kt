@@ -2,12 +2,11 @@ package org.d3if2081.hitungbmi.ui
 
 import android.os.Bundle
 import android.text.TextUtils
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import org.d3if2081.hitungbmi.R
 import org.d3if2081.hitungbmi.data.KategoriBmi
 import org.d3if2081.hitungbmi.databinding.FragmentHitungBinding
@@ -21,6 +20,8 @@ class HitungFragment : Fragment() {
     ): View? {
         binding = FragmentHitungBinding.inflate(layoutInflater, container, false)
 
+        setHasOptionsMenu(true)
+
         binding.button.setOnClickListener { hitungBmi() }
 
         binding.saranButton.setOnClickListener { view : View ->
@@ -31,6 +32,21 @@ class HitungFragment : Fragment() {
 
         binding.buttonReset.setOnClickListener { resetAll() }
         return binding.root
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.options_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.menu_about) {
+            findNavController().navigate(
+                R.id.action_hitungFragment_to_aboutFragment
+            )
+            return true
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     // Melakukan reset terhadap field text berat, tinggi, dan text bmi juga kategori bmi

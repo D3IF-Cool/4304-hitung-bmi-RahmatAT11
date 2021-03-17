@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_hitungFragment_to_saranFragment"
             app:destination="@id/saranFragment" />
+        <action
+            android:id="@+id/action_hitungFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
     </fragment>
 
     <fragment
@@ -24,4 +27,10 @@
             android:name="kategori"
             app:argType="org.d3if2081.hitungbmi.data.KategoriBmi" />
     </fragment>
+
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="org.d3if2081.hitungbmi.ui.AboutFragment"
+        android:label="AboutFragment"
+        tools:layout="@layout/fragment_about"/>
 </navigation>
