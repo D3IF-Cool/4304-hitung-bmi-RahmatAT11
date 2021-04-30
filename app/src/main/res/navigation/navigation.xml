@@ -17,7 +17,7 @@
             android:id="@+id/action_hitungFragment_to_aboutFragment"
             app:destination="@id/aboutFragment" />
         <action
-            android:id="@+id/action_hitungFragment_to_historyFragment"
+            android:id="@+id/action_hitungFragment_to_historiFragment"
             app:destination="@id/historyFragment" />
     </fragment>
 
@@ -38,7 +38,7 @@
         tools:layout="@layout/fragment_about"/>
     <fragment
         android:id="@+id/historyFragment"
-        android:name="org.d3if2081.hitungbmi.ui.histori.HistoryFragment"
+        android:name="org.d3if2081.hitungbmi.ui.histori.HistoriFragment"
         android:label="@string/histori"
         tools:layout="@layout/fragment_histori" />
 </navigation>

@@ -56,11 +56,6 @@ class HitungFragment : Fragment() {
             binding.kategoriTextView.text = getString(R.string.kategori_x, getKategori(it.kategori))
             binding.buttonGroup.visibility = View.VISIBLE
         })
-
-        viewModel.data.observe(viewLifecycleOwner, {
-            if (it == null) return@observe
-            Log.d("HitungFragment", "Data tersimpan. ID = ${it.id}")
-        })
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -71,7 +66,7 @@ class HitungFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId) {
             R.id.menu_histori -> {
-                findNavController().navigate(R.id.action_hitungFragment_to_historyFragment)
+                findNavController().navigate(R.id.action_hitungFragment_to_historiFragment)
                 return true
             }
             R.id.menu_about -> {
